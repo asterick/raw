@@ -1,0 +1,27 @@
+<languageVersion : 1.0;>
+
+kernel TransparentMode
+<   namespace : "net.sublab";
+    vendor : "Bryon Vandiver";
+    version : 1;
+    description : "Draw transparent mode";
+>
+{
+    input image4 foreground;
+    input image4 unused;
+    output pixel4 background;
+
+    const float highlight_level = 8.0/255.0;
+
+    void
+    evaluatePixel()
+    {
+        // This prevents throwing of an error in blend modes
+        sampleNearest(unused, outCoord());
+
+        background = sampleNearest( foreground, outCoord() );
+        
+        if( background.b < highlight_level )
+            background.b += highlight_level;
+    }
+}
