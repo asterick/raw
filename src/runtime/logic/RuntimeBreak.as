@@ -1,6 +1,6 @@
 package runtime.logic
 {
-	public class RuntimeBreak extends Error
-	{
-	}
+    public class RuntimeBreak extends Error
+    {
+    }
 }

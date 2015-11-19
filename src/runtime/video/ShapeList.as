@@ -18,12 +18,12 @@ package runtime.video
 
     public class ShapeList
     {
-		private static const TOP_LEFT:Point = new Point(0,0);
+        private static const TOP_LEFT:Point = new Point(0,0);
         
         // This is a new blend mode (flash 10 only)
         // For flash 9 compatibilty, an ADD blend mode could be used.
-		[Embed("shaders/transparent.pbj",mimeType="application/octet-stream")]
-		private static const _TRANSPARENT_SHADER_BYTECODE:Class;
+        [Embed("shaders/transparent.pbj",mimeType="application/octet-stream")]
+        private static const _TRANSPARENT_SHADER_BYTECODE:Class;
         private static const TRANSPARENT_SHADER:Shader = new Shader( new _TRANSPARENT_SHADER_BYTECODE() );
 
         private var _shapeList:Object;
